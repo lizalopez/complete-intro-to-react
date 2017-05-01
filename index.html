@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vidflix</title>
+</head>
+	<body>
+		<div id="app"> React not yendered yet</div>
+		<script src="node_modules/react/dist/react.js"></script>
+		<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+		<script>
+		var primerComponent = React.createClass({
+			render: function() {
+				return (
+					React.DOM.div(null,
+						React.DOM.h1(null,'el Primer component!')
+					)
+				)
+			}
+		})
+
+		console.log(ReactDOM);
+		ReactDOM.render(React.createElement(primerComponent), document.
+		getElementById('app'))
+		</script>
+	</body>
+</html>
+
