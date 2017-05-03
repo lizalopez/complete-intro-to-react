@@ -10,6 +10,7 @@ var titulo = React.createClass({
 	}
 })
 
+var miFactoriaDeTitulo = React.createFactory(titulo);
 //in this other class, you created multiple instances of the titulo component
 //so you build small compoments, then you build bigger components that encapsulate small components --> that's what react is
 var primerComponent = React.createClass({
@@ -18,10 +19,10 @@ var primerComponent = React.createClass({
 				//can give multiple seperate parameters, or an array
 			div(null, 
 				// [
-				React.createElement(titulo),
-				React.createElement(titulo),
-				React.createElement(titulo),
-				React.createElement(titulo)
+				miFactoriaDeTitulo(null),
+				miFactoriaDeTitulo(null),
+				miFactoriaDeTitulo(null),
+				miFactoriaDeTitulo(null)
 				// ]
 			)
 		)
