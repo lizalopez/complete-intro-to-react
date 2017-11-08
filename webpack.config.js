@@ -19,6 +19,8 @@ module.exports = {
   module: { // one f most importants, all the transforms you want
     rules: [ // if they pass this rule, t hey'll be transformed
       {
+        //exclude: /node_modules/, // says to not run node modules through babel, but more effcient is to include only js directory
+        include: path.resolve(__dirname, 'js'), //says, if it is not in my js files, do't include in babel
         test: /\.js$/, // can use regex. this means, if it's file ends with js, transform it and run through loader
         loader: 'babel-loader' //which is a module we installed with yarn
       }
