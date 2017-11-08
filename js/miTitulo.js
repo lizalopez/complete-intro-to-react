@@ -9,12 +9,20 @@ var h4 = React.DOM.h4
 // create the titulo stamp here
 var titulo = React.createClass({
   render: function () {
-    return div(null,
-      h4({style: {color: this.props.color, fontWeight: 'bold'}}, this.props.titulo)
-      // change from h4(null, this.propt.titulo) --> bc now we are giving it attributes, so you make a style object
+    const style = {color: this.props.color}
+    return (
+      <div>
+        <h1 style= { style }>
+          {this.props.titulo} 
+        </h1>
+      </div>
     )
   }
 })
+      // insdie h1 -- signify that you want it to output whatever the value is. if we put out this.props.title without
+      // any object marks outside of it, it would just ouptut a string. Also, you could put this.props.title.toUpperCase(),
+      // brackes indicate that we are inserting a JS expression
+// this mashes together all markup and behavior, which makes a very powerful debugging tool 
 
 export default titulo
 // es6 module. most common way is commonjs -- this is syntax of future
