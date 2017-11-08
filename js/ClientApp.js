@@ -1,18 +1,13 @@
-/* global React ReactDOM */
+import React from 'react'
 
-var div = React.DOM.div
-var h1 = React.DOM.h1
-var h4 = React.DOM.h4
+//es6 version of hte commonjs line below, es6 makes it ready to be used for webpack
+// var React = require('react');
+// var ReactDOM = require('react-dom');
 
-// create the titulo stamp here
-var titulo = React.createClass({
-  render: function () {
-    return div(null,
-      h4({style: {color: this.props.color, fontWeight: 'bold'}}, this.props.titulo)
-      // change from h4(null, this.propt.titulo) --> bc now we are giving it attributes, so you make a style object
-    )
-  }
-})
+import ReactDOM from 'react-dom'
+import titulo from './miTitulo'
+// var titulo = require('./miTitulo')
+var div = React.DOM.div;
 
 // makes a factory method for other components, so here it makes a factory method (that will run the helper functions?)
 var miFactoriaDeTitulo = React.createFactory(titulo)
