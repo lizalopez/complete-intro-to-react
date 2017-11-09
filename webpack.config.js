@@ -8,6 +8,9 @@ module.exports = {
     path: path.join(__dirname, '/public'), // where we want webpack to put bundle
     filename: 'bundle.js' // what it will be called
   },
+  devServer: {
+    publicPath: '/public/' // identifying to dev server, what the static files are - setting up "static fie serving"
+  },
   resolve: {
     extensions: ['.js', '.json'] // tells tool in which order to look at stuff, so first looks at js,, then json, etc
   },
@@ -19,7 +22,7 @@ module.exports = {
   module: { // one f most importants, all the transforms you want
     rules: [ // if they pass this rule, t hey'll be transformed
       {
-        enforce: 'pre', // before any of the build process, run this loader, don't care whaat hte output as long as it runs
+        enforce: 'pre', // before any of the build process, run this loader, don't care whaat hte output as long as it runs. synonymous with pre-loader, just the new name
         test: /\.js$/,
         loader: 'eslint-loader', 
         exclude: /node_modules/ //ignore every one else's code in npm modules
