@@ -23,6 +23,19 @@ module.exports = {
         include: path.resolve(__dirname, 'js'), //says, if it is not in my js files, do't include in babel
         test: /\.js$/, // can use regex. this means, if it's file ends with js, transform it and run through loader
         loader: 'babel-loader' //which is a module we installed with yarn
+      },
+      { // we're adding anotehr rule for css
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          { // pass an object here becase we need confit
+            loader: 'css-loader', // if you include css loader, you have to include style loader
+            options: {
+              url: false // don't inline my images
+            }
+          }
+          //now we can import css into js
+        ]
       }
     ]
   }
