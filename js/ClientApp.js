@@ -1,12 +1,12 @@
 import React from 'react'
-import { render } from 'react-dom' //specifying we only want render from react-dom, include verthing we need for that but only that
+import { render } from 'react-dom' // specifying we only want render from react-dom, include verthing we need for that but only that
 import '../public/normalize.css'
 import '../public/style.css'
 
 const Appa = React.createClass({
-  render() {
+  render () {
     return (
-      <div className='app'> 
+      <div className='app'>
         <div className='landing'>
           <h1>Expovideo</h1>
           <input type='text' placeholder='Busca' />
@@ -18,5 +18,5 @@ const Appa = React.createClass({
   }
 })
 
-render(<Appa />, document.getElementById('app'));
+render(<Appa />, document.getElementById('app'))
 // can put Appa in hear instead of React.createElement, since that's what it'd do under the hood anyways
